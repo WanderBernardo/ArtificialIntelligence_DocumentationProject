@@ -56,23 +56,42 @@ TIPO DE PAGAMENTO: A coluna TIPO DE PAGAMENTO é preenchida manualmente ou atrav
 3.2. Aba "Lançamentos"
 Aqui está a tabela transformada, incluindo a coluna que descreve o cálculo realizado por cada fórmula:
 
-| **Campo**         | **Fórmula**                                                                                   | **Descrição do Cálculo**                                                                                                      |
-|-------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| Tipo de Pagamento | =IF('BD '!K4=0,"",('BD '!K4))                                                                  | Verifica se o valor na célula 'BD '!K4 é 0. Se for 0, deixa a célula em branco; caso contrário, preenche com o valor de 'BD '!K4. |
-| Dia               | =IF(ISBLANK(H4),"",DAY(H4))                                                                   | Verifica se a célula H4 está em branco. Se estiver, deixa em branco; se não, retorna o dia da data em H4.                    |
-| Mês               | =IF(ISBLANK(H4),"",CHOOSE(MONTH(H4),"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro")) | Verifica se a célula H4 está em branco. Se não, retorna o nome do mês correspondente à data na célula H4.                     |
-| Ano               | =IF(ISBLANK(H4),"",(YEAR(H4)))                                                                 | Verifica se a célula H4 está em branco. Se não, retorna o ano da data presente em H4.                                          |
-| Trimestre         | =IFERROR(VLOOKUP(C4,'BD '!$G:$H,2,0),"")                                                      | Faz uma busca na coluna G da aba BD e retorna o valor correspondente na coluna H. Se houver erro, retorna em branco.           |
-| Semestre          | =IFERROR(VLOOKUP(C4,'BD '!$G:$I,3,0),"")                                                      | Realiza uma busca na coluna G da aba BD e retorna o valor correspondente na coluna I, indicando o semestre. Se houver erro, retorna em branco. |
-| Classificação     | =IFERROR(VLOOKUP(I4,'BD '!$C:$D,2,0),"")                                                      | Faz uma busca na coluna C da aba BD e retorna o valor correspondente na coluna D, indicando a classificação da transação. Se houver erro, retorna em branco. |
-| Tipo              | =IFERROR(VLOOKUP(K4,'BD '!$D:$E,2,0),"")                                                      | Realiza uma busca na coluna D da aba BD e retorna o valor correspondente na coluna E, indicando o tipo da transação. Se houver erro, retorna em branco. |
+Claro! Aqui está a tabela reformulada, com a descrição do cálculo incluída em uma linha abaixo de cada item:
 
+| **Campo**         | **Fórmula**                                                                                   | 
+|-------------------|-----------------------------------------------------------------------------------------------| 
+| Tipo de Pagamento | =IF('BD '!K4=0,"",('BD '!K4))                                                                  | 
+|                   | **Descrição:** Verifica se o valor na célula 'BD '!K4 é 0. Se for 0, deixa a célula em branco; caso contrário, preenche com o valor de 'BD '!K4. |
+| Dia               | =IF(ISBLANK(H4),"",DAY(H4))                                                                   | 
+|                   | **Descrição:** Verifica se a célula H4 está em branco. Se estiver, deixa em branco; se não, retorna o dia da data em H4.                    |
+| Mês               | =IF(ISBLANK(H4),"",CHOOSE(MONTH(H4),"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro")) | 
+|                   | **Descrição:** Verifica se a célula H4 está em branco. Se não, retorna o nome do mês correspondente à data na célula H4.                     |
+| Ano               | =IF(ISBLANK(H4),"",(YEAR(H4)))                                                                 | 
+|                   | **Descrição:** Verifica se a célula H4 está em branco. Se não, retorna o ano da data presente em H4.                                          |
+| Trimestre         | =IFERROR(VLOOKUP(C4,'BD '!$G:$H,2,0),"")                                                      | 
+|                   | **Descrição:** Faz uma busca na coluna G da aba BD e retorna o valor correspondente na coluna H. Se houver erro, retorna em branco.           |
+| Semestre          | =IFERROR(VLOOKUP(C4,'BD '!$G:$I,3,0),"")                                                      | 
+|                   | **Descrição:** Realiza uma busca na coluna G da aba BD e retorna o valor correspondente na coluna I, indicando o semestre. Se houver erro, retorna em branco. |
+| Classificação     | =IFERROR(VLOOKUP(I4,'BD '!$C:$D,2,0),"")                                                      | 
+|                   | **Descrição:** Faz uma busca na coluna C da aba BD e retorna o valor correspondente na coluna D, indicando a classificação da transação. Se houver erro, retorna em branco. |
+| Tipo              | =IFERROR(VLOOKUP(K4,'BD '!$D:$E,2,0),"")                                                      | 
+|                   | **Descrição:** Realiza uma busca na coluna D da aba BD e retorna o valor correspondente na coluna E, indicando o tipo da transação. Se houver erro, retorna em branco. |
+
+Agora, a descrição do cálculo está organizada em uma linha separada para cada item.
 Essa tabela descreve claramente as fórmulas utilizadas para cada campo, juntamente com uma breve explicação de cada cálculo.
 
-3.3. Aba "Controle de Gastos"
-Soma dos Valores Mensais: A fórmula =IF(SUMIFS(Lançamentos!$M:$M,Lançamentos!$I:$I,'Controle de gastos '!$C5,Lançamentos!$C:$C,'Controle de gastos '!D$4)=0,"",(SUMIFS(Lançamentos!$M:$M,Lançamentos!$I:$I,'Controle de gastos '!$C5,Lançamentos!$C:$C,'Controle de gastos '!D$4))) é utilizada para somar os valores das transações correspondentes a cada mês e conta.
+### 3.3. Aba "Controle de Gastos"
 
-Total Anual: A fórmula =SUM(D5:O5) é utilizada para calcular o total anual de cada conta.
+Aqui está a tabela conforme solicitado, incluindo a descrição do cálculo em uma linha abaixo de cada item:
+
+| **Campo**         | **Fórmula**                                                                                   | 
+|-------------------|-----------------------------------------------------------------------------------------------| 
+| Soma dos Valores Mensais | =IF(SUMIFS(Lançamentos!$M:$M,Lançamentos!$I:$I,'Controle de gastos '!$C5,Lançamentos!$C:$C,'Controle de gastos '!D$4)=0,"",(SUMIFS(Lançamentos!$M:$M,Lançamentos!$I:$I,'Controle de gastos '!$C5,Lançamentos!$C:$C,'Controle de gastos '!D$4))) | 
+|                   | **Descrição:** A fórmula usa `SUMIFS` para somar os valores da coluna M na aba "Lançamentos", com base nas condições das colunas I e C. Ela verifica se a soma é igual a zero e, caso seja, deixa em branco. Caso contrário, retorna o valor somado. |
+| Total Anual       | =SUM(D5:O5)                                                                                 | 
+|                   | **Descrição:** A fórmula soma os valores da linha de D5 a O5, calculando o total anual de cada conta, considerando as transações de janeiro a dezembro. |
+
+Cada fórmula tem a descrição detalhada do cálculo que realiza, com a explicação dividida em uma linha abaixo de cada item.
 
 4. Fluxo de Dados
 Base de Dados (BD): A aba BD contém as informações básicas sobre as contas, classificações e tipos de transações.
@@ -85,11 +104,11 @@ Consolidação (Controle de Gastos): A aba Controle de Gastos consolida as trans
 Esta planilha foi projetada para facilitar o controle de gastos pessoais, permitindo que o usuário registre suas transações e visualize um resumo financeiro mensal e anual. As fórmulas e referências entre as abas garantem que os dados sejam consistentes e atualizados automaticamente conforme novas transações são registradas.
 
 6. Melhorias Futuras
-Automatização de Categorias: Implementar uma lista suspensa para seleção de categorias e contas, reduzindo erros de digitação.
+* Automatização de Categorias: Implementar uma lista suspensa para seleção de categorias e contas, reduzindo erros de digitação.
 
-Gráficos e Relatórios: Adicionar gráficos e relatórios para uma visualização mais clara das despesas e receitas.
+* Gráficos e Relatórios: Adicionar gráficos e relatórios para uma visualização mais clara das despesas e receitas.
 
-Integração com Bancos: Possibilidade de integração com extratos bancários para importação automática de transações.
+* Integração com Bancos: Possibilidade de integração com extratos bancários para importação automática de transações.
 
 7. Conclusão
 A planilha de controle de gastos pessoais é uma ferramenta eficaz para o gerenciamento financeiro pessoal, oferecendo uma visão detalhada e organizada das despesas e receitas ao longo do tempo. Com a estrutura atual, o usuário pode facilmente registrar e monitorar suas finanças, tomando decisões mais informadas sobre seus gastos.
