@@ -37,26 +37,37 @@ Se precisar de mais algum ajuste ou adição, fique à vontade para pedir!
 2.3. Aba "Controle de Gastos"
 A aba Controle de Gastos consolida as informações das transações registradas na aba Lançamentos e apresenta um resumo mensal das despesas e receitas por categoria.
 
-Colunas:
+Aqui está o formato em tabela que você solicitou:
 
-CATEGORIA: Categoria da transação (ex: Renda, Alimentação, Transporte, etc.).
+| **CATEGORIA**    | **CONTA**        | **JANEIRO** | **FEVEREIRO** | **MARÇO** | **ABRIL** | **MAIO** | **JUNHO** | **JULHO** | **AGOSTO** | **SETEMBRO** | **OUTUBRO** | **NOVEMBRO** | **DEZEMBRO** | **TOTAL** |
+|------------------|------------------|-------------|---------------|-----------|-----------|----------|-----------|-----------|------------|--------------|-------------|--------------|--------------|-----------|
+| Renda            | Conta 1          | X           | Y             | Z         | W         | X        | Y         | Z         | W          | X            | Y           | Z            | W            | TOTAL1    |
+| Alimentação      | Conta 2          | X           | Y             | Z         | W         | X        | Y         | Z         | W          | X            | Y           | Z            | W            | TOTAL2    |
+| Transporte       | Conta 3          | X           | Y             | Z         | W         | X        | Y         | Z         | W          | X            | Y           | Z            | W            | TOTAL3    |
+| **TOTAL**        |                  | **X**       | **Y**         | **Z**     | **W**     | **X**    | **Y**     | **Z**     | **W**      | **X**        | **Y**       | **Z**        | **W**        | **TOTAL** |
 
-CONTA: Conta associada à transação.
+Substitua os valores "X", "Y", "Z", "W" pelas transações reais para cada mês e categoria. Cada linha representa uma categoria de transação e a soma das transações ao longo do ano na coluna "TOTAL".
 
-JANEIRO a DEZEMBRO: Colunas que representam os meses do ano, onde são somados os valores das transações correspondentes a cada mês.
-
-TOTAL: Soma total das transações ao longo do ano para cada conta.
 
 3. Funcionalidades e Fórmulas
 3.1. Aba "BD"
 TIPO DE PAGAMENTO: A coluna TIPO DE PAGAMENTO é preenchida manualmente ou através de referências a outras células.
 
 3.2. Aba "Lançamentos"
-Tipo de Pagamento: A fórmula =IF('BD '!K4=0,"",('BD '!K4)) é utilizada para preencher o tipo de pagamento com base na aba BD.
+Aqui está a tabela transformada, incluindo a coluna que descreve o cálculo realizado por cada fórmula:
 
-Dia, Mês, Ano, Trimestre, Semestre: As fórmulas =IF(ISBLANK(H4),"",DAY(H4)), =IF(ISBLANK(H4),"",CHOOSE(MONTH(H4),"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro")), =IF(ISBLANK(H4),"",(YEAR(H4))), =IFERROR(VLOOKUP(C4,'BD '!$G:$H,2,0),""), e =IFERROR(VLOOKUP(C4,'BD '!$G:$I,3,0),"") são utilizadas para extrair o dia, mês, ano, trimestre e semestre da data da transação.
+| **Campo**         | **Fórmula**                                                                                   | **Descrição do Cálculo**                                                                                                      |
+|-------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| Tipo de Pagamento | =IF('BD '!K4=0,"",('BD '!K4))                                                                  | Verifica se o valor na célula 'BD '!K4 é 0. Se for 0, deixa a célula em branco; caso contrário, preenche com o valor de 'BD '!K4. |
+| Dia               | =IF(ISBLANK(H4),"",DAY(H4))                                                                   | Verifica se a célula H4 está em branco. Se estiver, deixa em branco; se não, retorna o dia da data em H4.                    |
+| Mês               | =IF(ISBLANK(H4),"",CHOOSE(MONTH(H4),"Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro")) | Verifica se a célula H4 está em branco. Se não, retorna o nome do mês correspondente à data na célula H4.                     |
+| Ano               | =IF(ISBLANK(H4),"",(YEAR(H4)))                                                                 | Verifica se a célula H4 está em branco. Se não, retorna o ano da data presente em H4.                                          |
+| Trimestre         | =IFERROR(VLOOKUP(C4,'BD '!$G:$H,2,0),"")                                                      | Faz uma busca na coluna G da aba BD e retorna o valor correspondente na coluna H. Se houver erro, retorna em branco.           |
+| Semestre          | =IFERROR(VLOOKUP(C4,'BD '!$G:$I,3,0),"")                                                      | Realiza uma busca na coluna G da aba BD e retorna o valor correspondente na coluna I, indicando o semestre. Se houver erro, retorna em branco. |
+| Classificação     | =IFERROR(VLOOKUP(I4,'BD '!$C:$D,2,0),"")                                                      | Faz uma busca na coluna C da aba BD e retorna o valor correspondente na coluna D, indicando a classificação da transação. Se houver erro, retorna em branco. |
+| Tipo              | =IFERROR(VLOOKUP(K4,'BD '!$D:$E,2,0),"")                                                      | Realiza uma busca na coluna D da aba BD e retorna o valor correspondente na coluna E, indicando o tipo da transação. Se houver erro, retorna em branco. |
 
-Classificação e Tipo: As fórmulas =IFERROR(VLOOKUP(I4,'BD '!$C:$D,2,0),"") e =IFERROR(VLOOKUP(K4,'BD '!$D:$E,2,0),"") são utilizadas para preencher a classificação e o tipo da transação com base na aba BD.
+Essa tabela descreve claramente as fórmulas utilizadas para cada campo, juntamente com uma breve explicação de cada cálculo.
 
 3.3. Aba "Controle de Gastos"
 Soma dos Valores Mensais: A fórmula =IF(SUMIFS(Lançamentos!$M:$M,Lançamentos!$I:$I,'Controle de gastos '!$C5,Lançamentos!$C:$C,'Controle de gastos '!D$4)=0,"",(SUMIFS(Lançamentos!$M:$M,Lançamentos!$I:$I,'Controle de gastos '!$C5,Lançamentos!$C:$C,'Controle de gastos '!D$4))) é utilizada para somar os valores das transações correspondentes a cada mês e conta.
