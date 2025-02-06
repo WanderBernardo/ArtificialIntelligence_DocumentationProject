@@ -1,2 +1,4 @@
-# ArtificialIntelligence_CopolitDocumentationProject
-The goal is create a document of the project via Artificial Intelligence Copolit.
+# Artificial Intelligence: Documentation Project
+The goal is create the documents of the project via Artificial Intelligence Generate Copilot
+
+
