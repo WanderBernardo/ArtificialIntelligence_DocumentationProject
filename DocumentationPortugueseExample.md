@@ -34,7 +34,7 @@ Aqui está a transformação das informações em formato de tabela:
 
 Se precisar de mais algum ajuste ou adição, fique à vontade para pedir!
 
-2.3. Aba "Controle de Gastos"
+### 2.3. Aba "Controle de Gastos"
 A aba Controle de Gastos consolida as informações das transações registradas na aba Lançamentos e apresenta um resumo mensal das despesas e receitas por categoria.
 
 Aqui está o formato em tabela que você solicitou:
@@ -49,11 +49,13 @@ Aqui está o formato em tabela que você solicitou:
 Substitua os valores "X", "Y", "Z", "W" pelas transações reais para cada mês e categoria. Cada linha representa uma categoria de transação e a soma das transações ao longo do ano na coluna "TOTAL".
 
 
-3. Funcionalidades e Fórmulas
-3.1. Aba "BD"
+## 3. Funcionalidades e Fórmulas
+
+### 3.1. Aba "BD"
+
 TIPO DE PAGAMENTO: A coluna TIPO DE PAGAMENTO é preenchida manualmente ou através de referências a outras células.
 
-3.2. Aba "Lançamentos"
+### 3.2. Aba "Lançamentos"
 Aqui está a tabela transformada, incluindo a coluna que descreve o cálculo realizado por cada fórmula:
 
 Claro! Aqui está a tabela reformulada, com a descrição do cálculo incluída em uma linha abaixo de cada item:
@@ -93,23 +95,23 @@ Aqui está a tabela conforme solicitado, incluindo a descrição do cálculo em 
 
 Cada fórmula tem a descrição detalhada do cálculo que realiza, com a explicação dividida em uma linha abaixo de cada item.
 
-4. Fluxo de Dados
+## 4. Fluxo de Dados
 Base de Dados (BD): A aba BD contém as informações básicas sobre as contas, classificações e tipos de transações.
 
 Registro de Transações (Lançamentos): As transações são registradas na aba Lançamentos, onde cada transação é associada a uma conta da aba BD.
 
 Consolidação (Controle de Gastos): A aba Controle de Gastos consolida as transações registradas na aba Lançamentos e apresenta um resumo mensal e anual das despesas e receitas.
 
-5. Considerações Finais
+## 5. Considerações Finais
 Esta planilha foi projetada para facilitar o controle de gastos pessoais, permitindo que o usuário registre suas transações e visualize um resumo financeiro mensal e anual. As fórmulas e referências entre as abas garantem que os dados sejam consistentes e atualizados automaticamente conforme novas transações são registradas.
 
-6. Melhorias Futuras
+## 6. Melhorias Futuras
 * Automatização de Categorias: Implementar uma lista suspensa para seleção de categorias e contas, reduzindo erros de digitação.
 
 * Gráficos e Relatórios: Adicionar gráficos e relatórios para uma visualização mais clara das despesas e receitas.
 
 * Integração com Bancos: Possibilidade de integração com extratos bancários para importação automática de transações.
 
-7. Conclusão
+## 7. Conclusão
 A planilha de controle de gastos pessoais é uma ferramenta eficaz para o gerenciamento financeiro pessoal, oferecendo uma visão detalhada e organizada das despesas e receitas ao longo do tempo. Com a estrutura atual, o usuário pode facilmente registrar e monitorar suas finanças, tomando decisões mais informadas sobre seus gastos.
 
